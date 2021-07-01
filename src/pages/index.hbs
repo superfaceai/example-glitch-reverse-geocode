@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Superface!</title>
+    <link rel="stylesheet" href="/style.css" />   
+  </head>
+  <body>
+    <h1>
+      Hello Superface!
+    </h1>
+    <h2>
+      Geocoding
+    </h2>
+    
+    <section id="get-address">
+      
+      <p>
+        Get the address from coordinates.
+      </p>
+      
+      <form action="/" method="post" id="main-form">
+        <fieldset class="form-group" id="user-repos-form">
+          <label for="latitude">Latitude</label><br>
+          <input type="text" id="latitude" name="latitude" value="50.0874654"><br>
+
+          <label for="longitude">Longitude</label><br>
+          <input type="text" id="longitude" name="longitude" value="14.4212535"><br>
+
+          <label for="service">Service</label><br>
+          <select name = "service" id="service">
+            <option value = "nominatim" selected>nominatim</option>
+            <option value = "google-apis">google-apis</option>
+            <option value = "opencage">opencage</option>
+            <option value = "azure-maps">azure-maps</option>
+          </select><br>    
+        </fieldset>
+        
+        <input type="submit" value="Submit" id="main-button">
+        
+        <section id="info">
+          {{#if errorMessage}}
+            <div class="response response-error">
+              <h4>Form Error:</h4>
+              <p class="response-message" >
+                {{ errorMessage }}
+              </p>
+            </div>
+          {{/if}}
+
+          {{#if message}}
+            {{#if log}}
+              {{#if success}}
+                <h3>
+                  {{#if success}} 
+                    &#127881;    
+                  {{else}}
+                    &#128680;
+                  {{/if}}
+                  {{ message }}
+                </h3>
+              {{/if}}
+            {{/if}}
+          {{/if}}
+        </section>
+      </form>
+    </section>
+
+    <h2>
+      More Examples
+    </h2>
+    <p>
+      Check out <a href="https://glitch.com/edit/#!/sf-example?path=superface.js"><code>superface.js</code></a> and <a href="https://glitch.com/edit/#!/sf-example?path=README.md">README</a>.
+    </p>
+    
+    <script>
+      const mainForm = document.getElementById("main-form")
+      const mainSubmitButton = document.getElementById("main-submit")
+      
+      function throttle(callback, limit) {
+        let waiting = false;
+
+        return function(...args) {
+          if (!waiting) {
+            callback.apply(this, args);
+            waiting = true;
+
+            setTimeout(() => {
+              waiting = false; 
+            }, limit);
+          }
+        };
+      }
+
+      mainForm.addEventListener(
+        'submit', 
+        throttle(
+          event => {
+            mainSubmitButton.setAttribute("disabled", "disabled");
+          }, 10000)
+      )
+    </script>
+  </body>
+</html>

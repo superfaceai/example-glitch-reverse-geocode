@@ -1,0 +1,38 @@
+{
+  "name": "glitch-example",
+  "version": "0.0.1",
+  "description": "A simple Node app built on fastify, instantly up and running.",
+  "main": "server.js",
+  "source": "server.js",
+  "author": "Superface Team",
+  "scripts": {
+    "format": "prettier -c src",
+    "start": "node server.js",
+    "sf:install": "superface install"
+  },
+  "dependencies": {
+    "@superfaceai/cli": "^0.0.18",
+    "@superfaceai/one-sdk": "0.0.29-beta.1",
+    "dotenv": "^10.0.0",
+    "fastify": "^3.17.0",
+    "fastify-formbody": "^5.0.0",
+    "fastify-static": "^4.2.2",
+    "handlebars": "^4.7.7",
+    "point-of-view": "^4.14.0"
+  },
+  "engines": {
+    "node": ">=14.x"
+  },
+  "repository": {
+    "url": "https://github.com/superfaceai/glitch-example"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "superface"
+  ],
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  }
+}

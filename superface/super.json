@@ -1,0 +1,55 @@
+{
+  "profiles": {
+    "address/geocoding": {
+      "version": "3.0.1",
+      "providers": {
+        "nominatim": {
+          "file": "./maps/geocode.nominatim.suma",
+          "retryPolicy": "circuit-breaker"
+        },
+        "azure-maps": {
+          "file": "./maps/geocode.azure-maps.suma",
+          "retryPolicy": "none",
+          "defaults": {
+            "ReverseGeocode": {
+              "input": {
+                "subscriptionKey": "$SUBSCRIPTION_KEY"
+              }
+            }
+          }
+        },
+        "google-apis": {},
+        "opencage": {}
+      }
+    }
+  },
+  "providers": {
+    "mock": {
+      "security": []
+    },
+    "google-apis": {
+      "security": [
+        {
+          "id": "apikey",
+          "apikey": "$GOOGLE_MAPS_API_KEY"
+        }
+      ]
+    },
+    "opencage": {
+      "security": [
+        {
+          "id": "apikey",
+          "apikey": "$OPENCAGE_API_KEY"
+        }
+      ]
+    },
+    "nominatim": {
+      "file": "./providers/nominatim.json",
+      "security": []
+    },
+    "azure-maps": {
+      "file": "./providers/azure-maps.json",
+      "security": []
+    }
+  }
+}
