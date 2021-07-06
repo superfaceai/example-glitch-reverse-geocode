@@ -23,15 +23,13 @@ async function getAddress(latitude, longitude, service) {
   if (result.isErr()) {
     message = "Getting address failed";
     log = result.error;
-
-    console.log(message);
   } else {
     message = result.value[0].formattedAddress;
     log = result.value;
     success = true;
-
-    console.log(result.value[0]);
   }
+
+  console.log(message);
 
   return {
     success,
