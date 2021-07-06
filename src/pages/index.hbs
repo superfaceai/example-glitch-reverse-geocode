@@ -34,10 +34,18 @@
             <option value = "google-apis">google-apis</option>
             <option value = "opencage">opencage</option>
             <option value = "azure-maps">azure-maps</option>
+            <option value = "tomtom">tomtom</option>
+            <option value = "mapbox">mapbox</option>
+            <option value = "here">here</option>
+            <option value = "bing">bing</option>
+            <option value = "yandex">yandex</option>
+            <option value = "yahoo">yahoo</option>
+            <option value = "mapquest">mapquest</option>
+            <option value = "yelp">yelp</option>
           </select><br>    
         </fieldset>
         
-        <input type="submit" value="Submit" id="main-button">
+        <input type="submit" value="Submit" id="main-submit">
         
         <section id="info">
           {{#if errorMessage}}
@@ -50,18 +58,20 @@
           {{/if}}
 
           {{#if message}}
-            {{#if log}}
-              {{#if success}}
-                <h3>
-                  {{#if success}} 
-                    &#127881;    
-                  {{else}}
-                    &#128680;
-                  {{/if}}
-                  {{ message }}
-                </h3>
+            <h3>
+              {{#if success}} 
+                &#127881;    
+              {{else}}
+                &#128680;
               {{/if}}
-            {{/if}}
+              {{ message }}
+            </h3>
+          {{/if}}
+
+          {{#if resultLog}}
+            <div class="log">
+                <pre>{{ resultLog }}</pre>
+            </div>
           {{/if}}
         </section>
       </form>
