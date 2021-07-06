@@ -22,12 +22,12 @@ async function getAddress(latitude, longitude, service) {
 
   if (result.isErr()) {
     message = "Getting address failed";
-    log = JSON.stringify(result.error, null, 2);
+    log = result.error;
 
     console.log(message);
   } else {
     message = result.value[0].formattedAddress;
-    log = JSON.stringify(result.value, null, 2);
+    log = result.value;
     success = true;
 
     console.log(result.value[0]);

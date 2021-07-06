@@ -73,7 +73,7 @@ async function main() {
       errorMessage,
       message,
       success,
-      log: JSON.stringify(log, null, 2)
+      resultLog: JSON.stringify(log, null, 2)
     };
 
     await reply.view("/src/pages/index", params);
