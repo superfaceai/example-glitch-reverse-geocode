@@ -3,86 +3,77 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello Superface!</title>
+    <title>Geocoding - Coordinates to address</title>
     <link rel="stylesheet" href="/style.css" />   
   </head>
   <body>
     <h1>
-      Hello Superface!
+      Geocoding - Coordinates to address
     </h1>
-    <h2>
-      Geocoding
-    </h2>
+    <h3>
+      Get the address from coordinates.
+    </h3>
     
-    <section id="get-address">
+    <form action="/" method="post" id="main-form">
+      <fieldset class="form-group">
+        <h2>Enter a Latitude</h2>
+        <input type="text" id="latitude" name="latitude" value="50.0874654" placeholder="50.0874654"><br>
+      </fieldset>
       
-      <p>
-        Get the address from coordinates.
-      </p>
+      <fieldset class="form-group">
+        <h2>Enter a Longitude</h2>
+        <input type="text" id="longitude" name="longitude" value="14.4212535" placeholder="14.4212535"><br>
+      </fieldset>
       
-      <form action="/" method="post" id="main-form">
-        <fieldset class="form-group" id="user-repos-form">
-          <label for="latitude">Latitude</label><br>
-          <input type="text" id="latitude" name="latitude" value="50.0874654"><br>
+      <fieldset class="form-group" id="service-select">
+        <h2>Choose the Provider</h2>
+        <select name = "service" id="service">
+          <option value = "nominatim" selected>nominatim</option>
+          <option value = "google-apis">google-apis</option>
+          <option value = "opencage">opencage</option>
+          <option value = "azure-maps">azure-maps</option>
+          <option value = "tomtom">tomtom</option>
+          <option value = "mapbox">mapbox</option>
+          <option value = "here">here</option>
+          <option value = "bing">bing</option>
+          <option value = "yandex">yandex</option>
+          <option value = "yahoo">yahoo</option>
+          <option value = "mapquest">mapquest</option>
+          <option value = "yelp">yelp</option>
+        </select><br>
+      </fieldset>
 
-          <label for="longitude">Longitude</label><br>
-          <input type="text" id="longitude" name="longitude" value="14.4212535"><br>
+      <input type="submit" value="Execute" id="main-submit">
 
-          <label for="service">Service</label><br>
-          <select name = "service" id="service">
-            <option value = "nominatim" selected>nominatim</option>
-            <option value = "google-apis">google-apis</option>
-            <option value = "opencage">opencage</option>
-            <option value = "azure-maps">azure-maps</option>
-            <option value = "tomtom">tomtom</option>
-            <option value = "mapbox">mapbox</option>
-            <option value = "here">here</option>
-            <option value = "bing">bing</option>
-            <option value = "yandex">yandex</option>
-            <option value = "yahoo">yahoo</option>
-            <option value = "mapquest">mapquest</option>
-            <option value = "yelp">yelp</option>
-          </select><br>    
-        </fieldset>
-        
-        <input type="submit" value="Submit" id="main-submit">
-        
-        <section id="info">
-          {{#if errorMessage}}
-            <div class="response response-error">
-              <h4>Form Error:</h4>
-              <p class="response-message" >
-                {{ errorMessage }}
-              </p>
-            </div>
-          {{/if}}
+      <section id="info">
+        {{#if errorMessage}}
+          <div class="response response-error">
+            <h4>Form Error:</h4>
+            <p class="response-message" >
+              {{ errorMessage }}
+            </p>
+          </div>
+        {{/if}}
 
-          {{#if message}}
-            <h3>
-              {{#if success}} 
-                &#127881;    
-              {{else}}
-                &#128680;
-              {{/if}}
-              {{ message }}
-            </h3>
-          {{/if}}
+        {{#if message}}
+          <h3>
+            {{#if success}} 
+              &#127881;    
+            {{else}}
+              &#128680;
+            {{/if}}
+            {{ message }}
+          </h3>
+        {{/if}}
 
-          {{#if resultLog}}
-            <div class="log">
-                <pre>{{ resultLog }}</pre>
-            </div>
-          {{/if}}
-        </section>
-      </form>
-    </section>
+        {{#if resultLog}}
+          <div class="log">
+              <pre>{{ resultLog }}</pre>
+          </div>
+        {{/if}}
+      </section>
+    </form>
 
-    <h2>
-      More Examples
-    </h2>
-    <p>
-      Check out <a href="https://glitch.com/edit/#!/sf-example?path=superface.js"><code>superface.js</code></a> and <a href="https://glitch.com/edit/#!/sf-example?path=README.md">README</a>.
-    </p>
     
     <script>
       const mainForm = document.getElementById("main-form")
