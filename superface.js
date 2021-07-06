@@ -22,7 +22,7 @@ async function getAddress(latitude, longitude, service) {
 
   if (result.isErr()) {
     message = "Getting address failed";
-    log = result.error;
+    log = { kind: result.error.kind, message: result.error.message }
   } else {
     message = result.value[0].formattedAddress;
     log = result.value;
