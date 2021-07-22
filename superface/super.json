@@ -5,13 +5,17 @@
       "providers": {
         "nominatim": {
           "file": "./maps/geocode.nominatim.suma",
-          "retryPolicy": "circuit-breaker"
+          "defaults": {
+            "ReverseGeocode": {
+              "retryPolicy": "circuit-breaker"
+            }
+          }
         },
         "azure-maps": {
           "file": "./maps/geocode.azure-maps.suma",
-          "retryPolicy": "none",
           "defaults": {
             "ReverseGeocode": {
+              "retryPolicy": "none",
               "input": {
                 "subscriptionKey": "$SUBSCRIPTION_KEY"
               }
