@@ -1,18 +1,16 @@
 {
-  "name": "glitch-example",
+  "name": "reverse-geocode-example",
   "version": "0.0.1",
   "description": "A simple Node app built on fastify, instantly up and running.",
   "main": "server.js",
   "source": "server.js",
   "author": "Superface Team",
   "scripts": {
-    "format": "prettier -c src",
     "start": "node server.js",
     "sf:install": "superface install"
   },
   "dependencies": {
-    "@superfaceai/cli": "^0.0.18",
-    "@superfaceai/one-sdk": "^0.0.28",
+    "@superfaceai/one-sdk": "^0.0.29",
     "dotenv": "^10.0.0",
     "fastify": "^3.17.0",
     "fastify-formbody": "^5.0.0",
@@ -20,19 +18,20 @@
     "handlebars": "^4.7.7",
     "point-of-view": "^4.14.0"
   },
+  "devDependancies": {
+    "@superfaceai/cli": "^0.0.20"
+  },
   "engines": {
     "node": ">=14.x"
   },
   "repository": {
-    "url": "https://github.com/superfaceai/glitch-example"
+    "type": "git",
+    "url": "https://github.com/superfaceai/reverse-geocode-example.git"
   },
   "license": "MIT",
   "keywords": [
     "node",
     "glitch",
     "superface"
-  ],
-  "devDependencies": {
-    "prettier": "^2.1.2"
-  }
+  ]
 }
