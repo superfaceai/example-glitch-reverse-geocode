@@ -138,6 +138,6 @@ async function main() {
     console.log(`Your app is listening on ${address}`);
     server.log.info(`server listening on ${address}`);
   });
-};
+}
 
-main()
+main();
