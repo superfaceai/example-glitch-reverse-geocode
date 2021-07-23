@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="index.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Geocoding - Coordinates to address</title>
@@ -73,34 +74,5 @@
         {{/if}}
       </section>
     </form>
-
-    
-    <script>
-      const mainForm = document.getElementById("main-form")
-      const mainSubmitButton = document.getElementById("main-submit")
-      
-      function throttle(callback, limit) {
-        let waiting = false;
-
-        return function(...args) {
-          if (!waiting) {
-            callback.apply(this, args);
-            waiting = true;
-
-            setTimeout(() => {
-              waiting = false; 
-            }, limit);
-          }
-        };
-      }
-
-      mainForm.addEventListener(
-        'submit', 
-        throttle(
-          event => {
-            mainSubmitButton.setAttribute("disabled", "disabled");
-          }, 10000)
-      )
-    </script>
   </body>
 </html>
