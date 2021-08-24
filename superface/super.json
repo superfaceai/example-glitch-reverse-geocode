@@ -1,10 +1,9 @@
 {
   "profiles": {
     "address/geocoding": {
-      "version": "3.0.1",
+      "version": "3.1.0",
       "providers": {
         "nominatim": {
-          "file": "./maps/geocode.nominatim.suma",
           "defaults": {
             "ReverseGeocode": {
               "retryPolicy": "circuit-breaker"
@@ -12,13 +11,12 @@
           }
         },
         "azure-maps": {
-          "file": "./maps/geocode.azure-maps.suma",
           "defaults": {
             "ReverseGeocode": {
-              "retryPolicy": "none",
               "input": {
                 "subscriptionKey": "$SUBSCRIPTION_KEY"
-              }
+              },
+              "retryPolicy": "none"
             }
           }
         },
@@ -72,11 +70,9 @@
       ]
     },
     "nominatim": {
-      "file": "./providers/nominatim.json",
       "security": []
     },
     "azure-maps": {
-      "file": "./providers/azure-maps.json",
       "security": []
     },
     "tomtom": {
