@@ -1,0 +1,11 @@
+{
+    "name": "tomtom",
+    "services": [
+        {
+        "id": "default",
+        "baseUrl": "https://nominatim.openstreetmap.org/"
+        }
+    ],
+    "securitySchemes": [],
+    "defaultService": "default"
+}

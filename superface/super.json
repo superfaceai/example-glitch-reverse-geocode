@@ -1,0 +1,111 @@
+{
+  "profiles": {
+    "address/geocoding": {
+      "version": "3.1.0",
+      "providers": {
+        "nominatim": {
+          "defaults": {
+            "ReverseGeocode": {
+              "retryPolicy": "circuit-breaker"
+            }
+          }
+        },
+        "azure-maps": {
+          "defaults": {
+            "ReverseGeocode": {
+              "input": {
+                "subscriptionKey": "$SUBSCRIPTION_KEY"
+              },
+              "retryPolicy": "none"
+            }
+          }
+        },
+        "google-apis": {},
+        "opencage": {},
+        "tomtom": {
+          "file": "./maps/geocode.tomtom.suma"
+        },
+        "mapbox": {
+          "file": "./maps/geocode.mapbox.suma"
+        },
+        "here": {
+          "file": "./maps/geocode.here.suma"
+        },
+        "bing": {
+          "file": "./maps/geocode.bing.suma"
+        },
+        "yandex": {
+          "file": "./maps/geocode.yandex.suma"
+        },
+        "yahoo": {
+          "file": "./maps/geocode.yahoo.suma"
+        },
+        "mapquest": {
+          "file": "./maps/geocode.mapquest.suma"
+        },
+        "yelp": {
+          "file": "./maps/geocode.yelp.suma"
+        }
+      }
+    }
+  },
+  "providers": {
+    "mock": {
+      "security": []
+    },
+    "google-apis": {
+      "security": [
+        {
+          "id": "apikey",
+          "apikey": "$GOOGLE_MAPS_API_KEY"
+        }
+      ]
+    },
+    "opencage": {
+      "security": [
+        {
+          "id": "apikey",
+          "apikey": "$OPENCAGE_API_KEY"
+        }
+      ]
+    },
+    "nominatim": {
+      "security": []
+    },
+    "azure-maps": {
+      "security": []
+    },
+    "tomtom": {
+      "file": "./providers/tomtom.json",
+      "security": []
+    },
+    "mapbox": {
+      "file": "./providers/mapbox.json",
+      "security": []
+    },
+    "here": {
+      "file": "./providers/here.json",
+      "security": []
+    },
+    "bing": {
+      "file": "./providers/bing.json",
+      "security": []
+    },
+    "yandex": {
+      "file": "./providers/yandex.json",
+      "security": []
+    },
+    "yahoo": {
+      "file": "./providers/yahoo.json",
+      "security": []
+    },
+    "mapquest": {
+      "file": "./providers/mapquest.json",
+      "security": []
+    },
+    "yelp": {
+      "file": "./providers/yelp.json",
+      "security": []
+    }
+  }
+}

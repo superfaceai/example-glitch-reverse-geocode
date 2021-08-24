@@ -1,0 +1,201 @@
+:root {
+  --color-bg:#434A53;
+  --color-text-main: #fff;
+  --color-text-secondary: #434A53;
+  --color-borders: #212632;
+  --color-buttons: #1EE2C7;
+  --color-black: black;
+  --color-error: red;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk";
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Import fonts */
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+/* Our remix on glitch button */
+.btn--remix {
+  font-family: HK Grotesk;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  font-weight: 500;
+  height: 2.75rem;
+  align-items: center;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #000;
+  white-space: nowrap;
+  margin-left: auto;
+}
+.btn--remix img {
+  margin-right: 0.5rem;
+}
+.btn--remix:hover {
+  background-color: #D0FFF1;
+}
+
+/* Superface styles */
+body {
+  background-color: var(--color-bg);
+  font-family: HK Grotesk;
+  padding: 15px 40px;
+  font-size: 16px;
+  color: var(--color-text-main);
+}
+
+h1 {
+  font-size: 1.2em;
+}
+
+body > h1 {
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+body > h3 {
+  margin-top: 0px;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1rem;
+}
+
+form {
+  margin: 2.3rem 0;
+}
+
+#query-form, #structured-form {
+  margin-top: 0;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--color-borders);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+input[type="text"], select {
+  width: 100%;
+  max-width: 500px;
+}
+
+input[type="submit"] {
+  background-color: var(--color-buttons);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  margin: 10px 0;
+}
+
+label {
+  color: var(--color-text-main);
+  font-weight: bold;
+}
+
+.form-group {
+  margin: 20px 0;
+  border: none;
+  padding: 0;
+}
+.form-group label:not(:first-child) {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+fieldset[disabled='disabled'] {
+  display: none !important;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+#info > h3 {
+  margin-top: 0;
+}
+
+.response {
+  font-family: inherit;
+  font-size: 100%;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0 0 15px;
+}
+
+.response h4 {
+  color: var(--color-black)
+}
+
+.response h4,
+.response p {
+  margin: 0;
+}
+
+.response-error > .response-message {
+  color: var(--color-error);
+}
+.response-value > .response-message {
+  color: var(--color-black)
+}
+
+.log {
+  background-color: var(--color-text-main);
+  color: var(--color-text-secondary);
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.log pre {
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
