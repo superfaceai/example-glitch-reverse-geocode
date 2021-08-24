@@ -3,7 +3,7 @@ const { getClient } = require("./client");
 // get centralized superface client
 const client = getClient();
 
-// ReverseGeocode
+//  ReverseGeocode
 //  https://superface.ai/address/geocoding
 //
 //  available providers: mock, google-apis, opencage
@@ -22,13 +22,13 @@ async function getAddress(latitude, longitude, service) {
 
   if (result.isErr()) {
     message = "Getting address failed";
-    log = { kind: result.error.kind, message: result.error.message };
+    log = { kind: result.error.kind, message: result.error.message }
   } else {
     message = result.value[0].formattedAddress;
-    log = result.value;
+    log = result.value
     success = true;
   }
-
+  
   console.log(message);
 
   return {

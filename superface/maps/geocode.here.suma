@@ -1,9 +1,8 @@
 profile = "address/geocoding@3.0"
 provider = "here"
 
-// Good job! You've found an easter egg. 
-// This is missing map, write to us as soon as possible,
-// ...
+// Good job! You’ve found an easter egg. 
+// Write to hello@superface.ai with the subject “easter-egg” and claim your reward.
 
 map Geocode {
   http GET "/search" {

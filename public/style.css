@@ -1,12 +1,16 @@
 :root {
-  --color-bg: #434a53;
-  --color-text-main: #f9f9fb;
-  --color-text-secondary: #434a53;
+  --color-bg:#434A53;
+  --color-text-main: #fff;
+  --color-text-secondary: #434A53;
   --color-borders: #212632;
-  --color-buttons: #1ee2c7;
+  --color-buttons: #1EE2C7;
   --color-black: black;
   --color-error: red;
-  --font-family: HK Grotesk;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk";
 }
 
 /* Basic page style resets */
@@ -32,7 +36,7 @@
 
 /* Our remix on glitch button */
 .btn--remix {
-  font-family: var(--font-family);
+  font-family: HK Grotesk;
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -40,7 +44,7 @@
   height: 2.75rem;
   align-items: center;
   cursor: pointer;
-  background: #ffffff;
+  background: #FFFFFF;
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 4px;
@@ -53,13 +57,13 @@
   margin-right: 0.5rem;
 }
 .btn--remix:hover {
-  background-color: #d0fff1;
+  background-color: #D0FFF1;
 }
 
 /* Superface styles */
 body {
   background-color: var(--color-bg);
-  font-family: var(--font-family);
+  font-family: HK Grotesk;
   padding: 15px 40px;
   font-size: 16px;
   color: var(--color-text-main);
@@ -95,8 +99,7 @@ form {
   margin: 2.3rem 0;
 }
 
-#query-form,
-#structured-form {
+#query-form, #structured-form {
   margin-top: 0;
 }
 
@@ -105,15 +108,14 @@ input,
 select {
   font-family: inherit;
   font-size: 100%;
-  background: #ffffff;
+  background: #FFFFFF;
   border: 1px solid var(--color-borders);
   box-sizing: border-box;
   border-radius: 4px;
   padding: 0.5rem 1rem;
 }
 
-input[type="text"],
-select {
+input[type="text"], select {
   width: 100%;
   max-width: 500px;
 }
@@ -141,7 +143,7 @@ label {
   display: inline-block;
 }
 
-fieldset[disabled="disabled"] {
+fieldset[disabled='disabled'] {
   display: none !important;
 }
 
@@ -158,7 +160,7 @@ fieldset[disabled="disabled"] {
 .response {
   font-family: inherit;
   font-size: 100%;
-  background: var(--color-text-main);
+  background: #ffffff;
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 4px;
@@ -167,7 +169,7 @@ fieldset[disabled="disabled"] {
 }
 
 .response h4 {
-  color: var(--color-black);
+  color: var(--color-black)
 }
 
 .response h4,
@@ -179,7 +181,7 @@ fieldset[disabled="disabled"] {
   color: var(--color-error);
 }
 .response-value > .response-message {
-  color: var(--color-black);
+  color: var(--color-black)
 }
 
 .log {
